@@ -3,22 +3,22 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Pawansharma8010/hello-world-ui'
+                git 'https://github.com/Pawanbatarma8010/hello-world-ui'
             }
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Build') {
             steps {
-                sh 'ng build'
+                bat 'ng build'
             }
         }
         stage('Deploy') {
             steps {
-                sh '''
+                bat '''
                 docker build -t angular-app:latest .
                 docker run -d -p 80:80 --name angular-app angular-app:latest
                 '''
