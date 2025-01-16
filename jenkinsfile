@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Pawanbatarma8010/hello-world-ui'
+                git 'https://github.com/Pawansharma8010/hello-world-ui'
             }
         }
         stage('Install Dependencies') {
