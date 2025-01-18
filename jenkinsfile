@@ -19,8 +19,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat '''
-                docker build -t angular-app:latest .
-                docker run -d -p 80:80 --name angular-app angular-app:latest
+                 rmdir /s/q C:\sushikabar\deployment\ui\
+               mkdir C:\sushikabar\deployment\ui\
+               xcopy /S /E /Y dist\hello-world-ang C:\sushikabar\deployment\ui
                 '''
             }
         }
